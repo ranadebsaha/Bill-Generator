@@ -1,0 +1,134 @@
+{
+    "data": [
+        {  
+            "id":"ads",
+            "shop_name": "ADS",
+            "estd": 1920,
+            "phone_no-1": 98651960,
+            "phone_no-2": 968651960,
+            "email": "ads@gmail.com",
+            "address": "B.C. Road Burdwan",
+            "gst": "453689",
+            "hallmark": "453689",
+            "bill_no": "135",
+            "date": "10/10/2025",
+            "cust_name": "abc",
+            "cust_address": "bardhaman",
+            "cust_phone": 123456,
+            "cust_state": "wb",
+            "cust_pin": "713140",
+            "items": [
+                {
+                    "si_no": "1",
+                    "des": "abc",
+                    "hsn_code": "abc",
+                    "pc": "1",
+                    "purity": "22/22",
+                    "net_wt": "0.25",
+                    "gold_value": "200",
+                    "making_charges": "100",
+                    "amount": "300"
+                },
+                {
+                    "si_no": "2",
+                    "des": "abch",
+                    "hsn_code": "afbc",
+                    "pc": "1",
+                    "purity": "22/22",
+                    "net_wt": "0.35",
+                    "gold_value": "100",
+                    "making_charges": "100",
+                    "amount": "200"
+                },
+                {
+                    "si_no": "3",
+                    "des": "akc",
+                    "hsn_code": "arc",
+                    "pc": "1",
+                    "purity": "22/22",
+                    "net_wt": "0.45",
+                    "gold_value": "200",
+                    "making_charges": "200",
+                    "amount": "400"
+                }
+            ],
+            "total_amount":"900",
+            "t_c": [
+                {
+                    "1":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque dicta",
+                    "2":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque dicta",
+                    "3":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque dicta"
+                }
+            ],
+            "bank_name":"Indian Bank",
+            "ac_no":"48546996",
+            "ifsc":"4785sf5",
+            "note":"Replacement of Ornaments : Monday to Friday{11 PM to 4 PM}"
+        },
+        {   
+            "id":"das",
+            "shop_name": "DAS",
+            "estd": 1960,
+            "phone_no-1": 986513960,
+            "phone_no-2": 957651960,
+            "email": "das@gmail.com",
+            "address": "Golaphbag Road Burdwan",
+            "gst": "45365789",
+            "hallmark": "7863689",
+            "bill_no": "195",
+            "date": "10/10/2025",
+            "cust_name": "abc",
+            "cust_address": "bardhaman",
+            "cust_phone": 123456,
+            "cust_state": "wb",
+            "cust_pin": 713140,
+            "items": [
+                {
+                    "si_no": "1",
+                    "des": "abc",
+                    "hsn_code": "abc",
+                    "pc": "1",
+                    "purity": "22/22",
+                    "net_wt": "0.25",
+                    "gold_value": "200",
+                    "making_charges": "100",
+                    "amount": "300"
+                },
+                {
+                    "si_no": "2",
+                    "des": "abch",
+                    "hsn_code": "afbc",
+                    "pc": "1",
+                    "purity": "22/22",
+                    "net_wt": "0.35",
+                    "gold_value": "100",
+                    "making_charges": "100",
+                    "amount": "200"
+                },
+                {
+                    "si_no": "3",
+                    "des": "akc",
+                    "hsn_code": "arc",
+                    "pc": "1",
+                    "purity": "22/22",
+                    "net_wt": "0.45",
+                    "gold_value": "200",
+                    "making_charges": "200",
+                    "amount": "400"
+                }
+            ],
+            "total_amount":"900",
+            "t_c": [
+                {
+                    "1":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque dicta",
+                    "2":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque dicta",
+                    "3":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque dicta"
+                }
+            ],
+            "bank_name":"SBI Bank",
+            "ac_no":"4854456",
+            "ifsc":"478357sf5",
+            "note":"Replacement of Ornaments : Monday to Friday{11 PM to 4 PM}"
+        }
+    ]
+}

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div>
+        <div class="head-1 pt-2">
+            
+            <div class="header-1">
+                <p class="m-0 p-0 fs-5">CASH MEMO / TAX INVOICE</p>
+                <p class="m-0 p-0">Estd <%= user.estd %>
+                </p>
+            </div>
+            <div class="header-2 text-end small">
+                <p class="m-0 p-0">p-<%= user["phone_no-1"] %>
+                </p>
+                <p class="m-0 p-0">p-<%= user["phone_no-2"] %>
+                </p>
+                <p class="m-0 p-0">email-<%= user.email %>
+                </p>
+                <p class="m-0 p-0">duplicate seller copy/original buyer's copy</p>
+            </div>
+        </div>
+        <div class="header-3">
+            <h1><b>
+                    <%= user.shop_name %>
+                </b></h1>
+            <p>JEWELLERS</p>
+            <p>
+                <%= user.address %>
+            </p>
+        </div>
+        <hr style="height:5px;color:black;margin:60px; border:2px solid">
+        <div class="header-4">
+            <p class="h-4-1">GSTIN : <%= user.gst %>
+            </p>
+            <p class="h-4-2">HallMark Reg. No:<%= user.hallmark %>
+            </p>
+        </div>
+        <table class="table table-bordered border-dark">
+            <thead>
+                <tr>
+                    <th colspan="3">
+                        Bill No:<%= user.bill_no %> <br>
+                            Date:<%= user.date %>
+                    </th>
+                    <th colspan="6" rowspan="">Buyer's Details</th>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <th colspan="3">
+                        Items Types: Gold Ornaments <br>
+                        Purity: 22/22 K <br>
+                        Rate per Gm: 22/22 <br>
+                        SM code: PM21
+                    </th>
+                    <th colspan="6">
+                        Name: <%= user.cust_name %> <br>
+                            Address: <%= user.cust_address %> <br>
+                                Phone No: <%= user.cust_phone %> <br>
+                                    State: <%= user.cust_state %><br>
+                                        Pin No: <%= user.cust_pin %>
+                    </th>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <th>
+                        S No.
+                    </th>
+                    <th>Description</th>
+                    <th>Hsn. Code</th>
+                    <th>PC</th>
+                    <th>Purity</th>
+                    <th>Net Wt</th>
+                    <th>Gold Value</th>
+                    <th>Making Charges</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% user.items.forEach((item,i)=>{%>
+                    <tr>
+                        <th scope="row">
+                            <%= item.si_no %>
+                        </th>
+                        <td>
+                            <%= item.des %>
+                        </td>
+                        <td>
+                            <%= item.hsn_code %>
+                        </td>
+                        <td>
+                            <%= item.pc %>
+                        </td>
+                        <td>
+                            <%= item.purity %>
+                        </td>
+                        <td>
+                            <%= item.net_wt %>
+                        </td>
+                        <td>
+                            <%= item.gold_value %>
+                        </td>
+                        <td>
+                            <%= item.making_charges %>
+                        </td>
+                        <td>
+                            <%= item.amount %>
+                        </td>
+                    </tr>
+                    <% })%>
+                        <tr>
+                            <td colspan="4" class="text-end">
+                                <%= user.items.length %>
+                            </td>
+                            <td></td>
+                            <% let totalNetWt=0; 
+                            user.items.forEach(item=> {
+                                totalNetWt += parseFloat(item.net_wt);
+                                });
+                                %>
+                                <td class="text-center"><%= totalNetWt.toFixed(2) %> gm</td>
+                                <td colspan="2" class="text-end">Total Amount</td>
+                                <td class="text-end"><%= user.total_amount %></td>
+                        </tr>
+                        <tr>
+                            <td colspan="8" class="text-end">SGST 1.50 % <br> CGST 1.50%</td>
+                            <td>100 <br> 100</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8" class="text-end">Total Amount with Tax</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8" class="text-end">Round Off</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8" class="text-end">Balance Amount</td>
+                            <td>100</td>
+                        </tr>
+            </tbody>
+        </table>
+        <div class="footer-1">
+            <p>
+                E. & O.E <br> For <%= user.shop_name %>
+            </p>
+        </div>
+        <div>
+            <p><u>Terms and Conditions: </u></p>
+            
+
+            <ol>
+                <% const terms = user["t_c"][0]; %>
+                <% Object.keys(terms).forEach(key => { %>
+                  <li><%= terms[key] %></li>
+                <% }); %>
+              </ol>
+
+            
+        </div>
+        <div class="footer-2">
+            <p>"Our Bank: <%= user.bank_name %>. A/C NO. <%= user.ac_no %> , IFSC. <%= user.ifsc %>"</p>
+        </div>
+        <div class="footer-2">
+            <p>"<%= user.note %>"</p>
+        </div>
+    </div>
+    <div>
+        <p class="footer-4">Customer Sign</p>
+        <p class="footer-5">Authorised Sign</p>
+    </div>
+    <div class="footer-6">
+        <p class="border-2">We have no Branch</p>
+    </div>
+    <div class="footer-7">
+        <p class="border-2">All DISPUTES Are subject to burdwan jurisdicition only </p>
+    </div>
+    <button id="printButton" onclick="window.print()">Print Page</button>
+</body>
+
+</html>
+
+<style>
+@media print {
+    #printButton {
+        display: none;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body {
+        width: 210mm;
+        height: 297mm;
+    }
+
+    * {
+        font-size: 11px !important;
+    }
+
+    .table th,
+    .table td {
+        padding: 4px !important;
+    }
+
+    table {
+        page-break-inside: avoid !important;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 10mm;
+}
+
+.head-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 20px 0 20px;
+    position: relative;
+}
+
+.header-1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: max-content;
+}
+
+.header-1 p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.header-2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    text-align: right;
+    min-width: 200px;
+}
+
+.header-2 p {
+    margin: 0;
+    padding: 0;
+}
+
+.header-3 {
+    
+    text-align: center;
+    margin: 10px 0;
+    margin-top: 80px;
+}
+
+.header-3 h1 {
+    font-size: 24px;
+    margin-bottom: 0;
+}
+
+.header-3 p {
+    margin: 0;
+}
+
+.header-4 {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 60px;
+    font-size: 11px;
+}
+
+.table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    padding: 6px;
+}
+
+.footer-1 {
+    text-align: right;
+    margin-top: 10px;
+    font-size: 11px;
+}
+
+.footer-2 {
+    text-align: center;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.footer-4{
+    display:flex;
+    /* width: 50%; */
+    text-align: left;
+    /* margin-top: 30px; */
+    font-size: 13px;
+}
+
+.footer-5 {
+    display: flex;
+    /* width: 50%; */
+    justify-content: right;
+    /* margin-top: 30px; */
+    font-size: 13px;
+}
+
+.footer-6,
+.footer-7 {
+    text-align: center;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.border-2 {
+    border: 1px solid black;
+    padding: 3px 6px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+@page {
+    size: A4 portrait;
+    margin: 1cm;
+}
+
+</style>
