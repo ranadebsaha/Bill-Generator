@@ -58,10 +58,10 @@
             <thead>
                 <tr>
                     <th colspan="3">
-                        Items Types: Gold Ornaments <br>
-                        Purity: 22/22 K <br>
-                        Rate per Gm: 22/22 <br>
-                        SM code: PM21
+                        Items Types: <%= user.item_type %> <br>
+                        Purity: <%= user.purity %> <br>
+                        Rate per Gm: <%= user.rate_per_gm %> <br>
+                        SM code: <%= user.sm_code %>
                     </th>
                     <th colspan="6">
                         Name: <%= user.cust_name %> <br>
@@ -123,7 +123,7 @@
                             <td colspan="4" class="text-end">
                                 <%= user.items.length %>
                             </td>
-                            <td></td>
+                            <td>&nbsp;</td>
                             <% let totalNetWt=0; 
                             user.items.forEach(item=> {
                                 totalNetWt += parseFloat(item.net_wt);
@@ -134,20 +134,32 @@
                                 <td class="text-end"><%= user.total_amount %></td>
                         </tr>
                         <tr>
-                            <td colspan="8" class="text-end">SGST 1.50 % <br> CGST 1.50%</td>
-                            <td>100 <br> 100</td>
+                            <td colspan="8" class="text-end">SGST <%= user.sgst_persent %>% <br> CGST <%= user.cgst_persent %>%</td>
+                            <td><%= user.sgst %> <br> <%= user.cgst %></td>
                         </tr>
                         <tr>
                             <td colspan="8" class="text-end">Total Amount with Tax</td>
-                            <td>100</td>
+                            <td><%= user.total_amount_with_tax %></td>
                         </tr>
                         <tr>
-                            <td colspan="8" class="text-end">Round Off</td>
-                            <td>100</td>
+                            <td colspan="8" class="text-end">
+                                Round Off<br/>
+                                <% for (let i = 0; i < user.receipt_name.length; i++) { %>
+                                    <%= user.receipt_name[i] %><br/>
+                                <% } %>
+                            </td>
+                            <td>
+                                <%= user.round_off %><br/>
+                                <% for (let i = 0; i < user.receipt_value.length; i++) { %>
+                                    <%= user.receipt_value[i] %><br/>
+                                <% } %>
+                            </td>
+                            
                         </tr>
                         <tr>
-                            <td colspan="8" class="text-end">Balance Amount</td>
-                            <td>100</td>
+                            <td colspan="6" class="text-center"><%= user.balance_amount_in_words %></td>
+                            <td colspan="2" class="text-end">Balance Amount</td>
+                            <td><%= user.balance_amount %></td>
                         </tr>
             </tbody>
         </table>
@@ -181,14 +193,12 @@
         <p class="footer-5">Authorised Sign</p>
     </div>
     <div class="footer-6">
-        <p class="border-2">We have no Branch</p>
+        <p class="border-2"><%= user.tagline_1 %></p>
     </div>
     <div class="footer-7">
-        <p class="border-2">All DISPUTES Are subject to burdwan jurisdicition only </p>
+        <p class="border-2"><%= user.tagline_2 %> </p>
     </div>
-    <button id="printButton" onclick="window.print()">Print Page</button>
 </body>
-
 </html>
 
 <style>

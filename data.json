@@ -12,6 +12,10 @@
             "hallmark": "453689",
             "bill_no": "135",
             "date": "10/10/2025",
+            "item_type":"GOLD",
+            "purity": "22/22 K",
+            "rate_per_gm.":"22/22:6925.00",
+            "sm_code":"PM21",
             "cust_name": "abc",
             "cust_address": "bardhaman",
             "cust_phone": 123456,
@@ -53,6 +57,28 @@
                 }
             ],
             "total_amount":"900",
+            "sgst_persent":"1.50%",
+            "cgst_persent":"1.50%",
+            "sgst":"251.56",
+            "cgst":"251.56",
+            "total_amount_with_tax":"17000.00",
+            "round_off":"-0.12",
+            "receipt_name":[
+                
+                    "receipt_1",
+                    "receipt_2",
+                    "receipt_3"
+                
+            ],
+            "receipt_value":[
+                
+                    "100",
+                    "200",
+                    "300"
+                
+            ],
+            "balance_amount":"17000",
+            "balance_amount_in_words":"Seventeen Thousand only",
             "t_c": [
                 {
                     "1":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque dicta",
@@ -63,25 +89,31 @@
             "bank_name":"Indian Bank",
             "ac_no":"48546996",
             "ifsc":"4785sf5",
-            "note":"Replacement of Ornaments : Monday to Friday{11 PM to 4 PM}"
+            "note":"Replacement of Ornaments : Monday to Friday{11 PM to 4 PM}",
+            "tagline_1":"We have no branch",
+            "tagline_2":"All Disputes Are subject to Burdwan Jurisdicition only"
         },
-        {   
-            "id":"das",
-            "shop_name": "DAS",
-            "estd": 1960,
-            "phone_no-1": 986513960,
-            "phone_no-2": 957651960,
-            "email": "das@gmail.com",
-            "address": "Golaphbag Road Burdwan",
-            "gst": "45365789",
-            "hallmark": "7863689",
-            "bill_no": "195",
+        {  
+            "id":"ads",
+            "shop_name": "ADS",
+            "estd": 1920,
+            "phone_no-1": 98651960,
+            "phone_no-2": 968651960,
+            "email": "ads@gmail.com",
+            "address": "B.C. Road Burdwan",
+            "gst": "453689",
+            "hallmark": "453689",
+            "bill_no": "135",
             "date": "10/10/2025",
+            "item_type":"GOLD",
+            "purity": "22/22 K",
+            "rate_per_gm.":"22/22:6925.00",
+            "sm_code":"PM21",
             "cust_name": "abc",
             "cust_address": "bardhaman",
             "cust_phone": 123456,
             "cust_state": "wb",
-            "cust_pin": 713140,
+            "cust_pin": "713140",
             "items": [
                 {
                     "si_no": "1",
@@ -118,6 +150,28 @@
                 }
             ],
             "total_amount":"900",
+            "sgst_persent":"1.50%",
+            "cgst_persent":"1.50%",
+            "sgst":"251.56",
+            "cgst":"251.56",
+            "total_amount_with_tax":"17000.00",
+            "round_off":"-0.12",
+            "receipt_name":[
+                
+                    "receipt_1",
+                    "receipt_2",
+                    "receipt_3"
+                
+            ],
+            "receipt_value":[
+                
+                    "100",
+                    "200",
+                    "300"
+                
+            ],
+            "balance_amount":"17000",
+            "balance_amount_in_words":"Seventeen Thousand only",
             "t_c": [
                 {
                     "1":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque dicta",
@@ -125,10 +179,12 @@
                     "3":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque dicta"
                 }
             ],
-            "bank_name":"SBI Bank",
-            "ac_no":"4854456",
-            "ifsc":"478357sf5",
-            "note":"Replacement of Ornaments : Monday to Friday{11 PM to 4 PM}"
+            "bank_name":"Indian Bank",
+            "ac_no":"48546996",
+            "ifsc":"4785sf5",
+            "note":"Replacement of Ornaments : Monday to Friday{11 PM to 4 PM}",
+            "tagline_1":"We have no branch",
+            "tagline_2":"All Disputes Are subject to Burdwan Jurisdicition only"
         }
     ]
 }
